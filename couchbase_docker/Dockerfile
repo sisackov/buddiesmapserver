@@ -1,4 +1,3 @@
 FROM couchbase
-ADD tmpconfig /opt/couchbase/var
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["couchbase-server"]
+COPY configure.sh /opt/couchbase
+CMD ["/opt/couchbase/configure.sh"]
