@@ -1,6 +1,6 @@
 const Express = require("express");
 const router = Express();
-var Couchbase = require("couchbase");
+const Couchbase = require("couchbase");
 const cluster = new Couchbase.Cluster('couchbase://' + process.env.COUCHBASE_HOST);
 cluster.authenticate(process.env.COUCHBASE_ADMINISTRATOR_USERNAME, process.env.COUCHBASE_ADMINISTRATOR_PASSWORD);
 const bucket = cluster.openBucket(process.env.COUCHBASE_BUCKET, process.env.COUCHBASE_BUCKET_PASSWORD);
